@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>com.github.taeyun1215.grpc-universal-navigation</id>
+    <name>Universal gRPC Navigation</name>
+    <version>1.0.0</version>
+    <vendor email="taeyun1215@naver.com" url="https://github.com/taeyun1215">Taeyun Lee</vendor>
+
+    <description>
+        IntelliJ plugin that provides universal navigation support for gRPC services.
+        It lets developers quickly jump between gRPC proto service definitions and Kotlin/Java implementations.
+    </description>
+
+    <!-- IntelliJ Platform 자체 의존 -->
+    <depends>com.intellij.modules.platform</depends>
+    <!-- Kotlin 플러그인 의존 -->
+    <depends>org.jetbrains.kotlin</depends>
+
+    <!-- K2 파서와 호환 안 됨 (선택적으로 추가) -->
+    <incompatible-with>org.jetbrains.kotlin.k2</incompatible-with>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <gotoDeclarationHandler
+                language="kotlin"
+                implementationClass="com.example.UniversalGrpcGotoImplementationHandler"/>
+    </extensions>
+</idea-plugin>
