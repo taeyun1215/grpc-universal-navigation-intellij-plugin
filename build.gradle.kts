@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.example"
-version = "1.0-SNAPSHOT"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -34,6 +34,7 @@ tasks {
     }
     patchPluginXml {
         version.set(project.version.toString())
+//        sinceBuild.set("241") // 로컬에서 테스트를 할 때만 사용
         sinceBuild.set("242")
         untilBuild.set("251.*")
     }
